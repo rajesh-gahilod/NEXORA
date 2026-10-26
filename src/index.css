@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0B0F19;
+    color: #F1F5F9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glassmorphism & UI utilities */
+@layer components {
+  .glass-card {
+    background: rgba(15, 22, 38, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.45);
+  }
+
+  .glass-card-hover {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.55), 0 0 20px -3px rgba(139, 92, 246, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .glass-input {
+    background: rgba(11, 15, 25, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #F8FAFC;
+    transition: all 0.2s ease;
+  }
+
+  .glass-input:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+    outline: none;
+  }
+
+  .badge-purple {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #C084FC;
+  }
+
+  .badge-blue {
+    background: rgba(14, 165, 233, 0.15);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    color: #38BDF8;
+  }
+
+  .badge-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34D399;
+  }
+
+  .badge-amber {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #FBBF24;
+  }
+
+  .badge-rose {
+    background: rgba(244, 63, 94, 0.15);
+    border: 1px solid rgba(244, 63, 94, 0.3);
+    color: #FB7185;
+  }
+}
+
+/* Print Friendly Styles */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+
+  .no-print,
+  nav,
+  aside,
+  header,
+  button,
+  .print-hide {
+    display: none !important;
+  }
+
+  .glass-card {
+    background: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    box-shadow: none !important;
+    color: #0F172A !important;
+    break-inside: avoid;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
