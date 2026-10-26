@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // Ensures relative paths for GitHub Pages and subfolder hosting
+  base: '/NEXORA/', // Official GitHub Pages base path for repo https://github.com/rajesh-gahilod/NEXORA
 })
